@@ -1,0 +1,119 @@
+# StudyNotion Online Education Platform (MERN App)
+
+[Website Link](https://studynotion-frontend.vercel.app/)
+
+![Main Page](client/images/mainpage.png)
+
+## Project Overview
+
+StudyNotion is a comprehensive ed-tech platform built with the MERN stack (MongoDB, ExpressJS, ReactJS, NodeJS). It enables users to create, consume, and rate educational content, providing an interactive and accessible learning experience for students and a robust platform for instructors to showcase their expertise.
+
+---
+
+## Features
+
+### For Students:
+- Browse and enroll in courses
+- View course content including videos and documents
+- Rate and review courses
+- Manage wishlist and cart
+- Edit and view user profile details
+
+### For Instructors:
+- Manage courses: create, update, delete
+- View course insights and student feedback
+- Manage profile details
+
+### Future Scope (Admin Panel):
+- Platform-wide dashboard and insights
+- Instructor and user management
+- Course management
+
+---
+
+## System Architecture
+
+The platform follows a client-server architecture with three main components:
+
+- **Front-end:** Built with ReactJS, providing a dynamic and responsive UI.
+- **Back-end:** Built with NodeJS and ExpressJS, offering RESTful APIs for authentication, course management, payments, and more.
+- **Database:** MongoDB stores user data, course content, and other relevant information.
+
+![Architecture Diagram](client/images/architecture.png)
+
+---
+
+## Technology Stack
+
+- **Front-end:** ReactJS, Redux, Tailwind CSS
+- **Back-end:** NodeJS, ExpressJS, MongoDB, Mongoose, JWT, Bcrypt
+- **Media Management:** Cloudinary for storing images, videos, and documents
+- **Payment Integration:** Razorpay for secure payment processing
+
+---
+
+## API Endpoints (Sample)
+
+- `POST /api/auth/signup` - User registration
+- `POST /api/auth/login` - User login and JWT token generation
+- `POST /api/auth/verify-otp` - OTP verification
+- `POST /api/auth/forgot-password` - Password reset email
+- `GET /api/courses` - List all courses
+- `GET /api/courses/:id` - Get course details
+- `POST /api/courses` - Create a new course
+- `PUT /api/courses/:id` - Update a course
+- `DELETE /api/courses/:id` - Delete a course
+- `POST /api/courses/:id/rate` - Rate a course
+
+---
+
+## Database Schema
+
+The platform uses MongoDB with schemas for:
+
+- Students
+- Instructors
+- Courses
+
+![Database Schema](client/images/schema.png)
+
+---
+
+## Deployment
+
+The front-end is deployed on Vercel. The back-end can be deployed on any NodeJS-compatible hosting service. Environment variables and deployment scripts are configured accordingly.
+
+---
+
+## Testing
+
+Testing includes unit tests for API endpoints and integration tests for front-end components. Further testing can be done to cover edge cases and user flows.
+
+---
+
+## Future Enhancements
+
+- Admin panel for platform management
+- Enhanced analytics and reporting
+- Support for additional payment gateways
+- Mobile app development
+
+---
+
+## Getting Started
+
+1. Clone the repository
+2. Install dependencies for client and server
+3. Configure environment variables
+4. Run client and server locally
+5. Access the platform via the front-end URL
+
+---
+
+## Contact
+
+For any queries or contributions, please contact the project maintainers.
+
+---
+
+This README provides a comprehensive overview of the StudyNotion platform, its architecture, features, and technical details to help developers and users understand and contribute effectively.
