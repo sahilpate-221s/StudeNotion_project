@@ -20,13 +20,13 @@ dotenv.config();
 
 database.connect();
  
-const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
+// const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 
 app.use(express.json());
 app.use(cookieParser());
 app.use(
 	cors({
-		origin: FRONTEND_URL,
+		origin: 'https://studynotionapp21.netlify.app',
 		credentials: true,
 	})
 );
