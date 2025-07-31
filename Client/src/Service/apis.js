@@ -1,4 +1,5 @@
 // const BASE_URL = process.env.BACKEND_URL
+// const BASE_URL = "https://studenotion-project.onrender.com/api/v1"
 const BASE_URL = "https://studenotion-project.onrender.com/api/v1"
 
 // AUTH ENDPOINTS
