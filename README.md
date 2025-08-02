@@ -12,19 +12,21 @@
 
 StudyNotion is a cutting-edge educational technology platform designed to revolutionize the way students learn and instructors teach. Built with the powerful MERN stack (MongoDB, Express.js, React.js, Node.js), this platform offers a seamless, interactive learning experience that bridges the gap between education and technology.
 
-## Credentials to login
-- As Student 
-email: h@gmail.com
-password: 123456
+## 🧑‍🏫 Credentials to Login
 
-or 
+### 👨‍🎓 As Student
+- **Email:** `h@gmail.com`  
+- **Password:** `123456`
 
-email: s.sahil007patel@gmail.com
-password: 123456
+**or**
 
-- As Instructor
-email: KaranRai@gmail.com
-password: 123456
+- **Email:** `s.sahil007patel@gmail.com`  
+- **Password:** `123456`
+
+### 👨‍🏫 As Instructor
+- **Email:** `KaranRai@gmail.com`  
+- **Password:** `123456`
+
 
 
 ## 💳 Credentials for Razorpay to Perform Testing Payment
