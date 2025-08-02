@@ -31,12 +31,13 @@ exports.createCategory = async (req, res) => {
 exports.showAllCategories = async (req, res) => {
   try {
     const allCategories = await Category.find().populate("courses");
-    const categoriesWithPublishedCourses = allCategories.filter((category) =>
-      category.courses.some((course) => course.status === "Published")
-    );
+    // const categoriesWithPublishedCourses = allCategories.filter((category) =>
+    //   category.courses.some((course) => course.status === "Published")
+    // );
     res.status(200).json({
       success: true,
-      data: categoriesWithPublishedCourses,
+      // data: categoriesWithPublishedCourses,
+      data: allCategories,
     });
   } catch (error) {
     res.status(500).json({
