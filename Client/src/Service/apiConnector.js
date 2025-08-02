@@ -2,6 +2,8 @@ import axios from "axios";
 
 export const axiosInstance = axios.create({});
 
+axiosInstance.defaults.withCredentials = true;
+
 // Add a request interceptor to include Authorization header with token from localStorage
 axiosInstance.interceptors.request.use(
   (config) => {
