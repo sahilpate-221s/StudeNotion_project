@@ -105,7 +105,10 @@ exports.login = async (req, res) => {
   try {
     const { email, password } = req.body;
 
+    console.log("Login attempt for email:", email);
+
     if (!email || !password) {
+      console.log("Missing email or password");
       return res.status(400).json({
         success: false,
         message: `Please Fill up All the Required Fields`,
@@ -115,13 +118,15 @@ exports.login = async (req, res) => {
     const user = await User.findOne({ email }).populate("additionalDetails");
 
     if (!user) {
+      console.log("User not found for email:", email);
       return res.status(401).json({
         success: false,
         message: `User is not Registered with Us Please SignUp to Continue`,
       });
     }
 
-    if (await bcrypt.compare(password, user.password)) {
+    const passwordMatch = await bcrypt.compare(password, user.password);
+    if (passwordMatch) {
       const token = jwt.sign(
         { email: user.email, id: user._id, role: user.role },
         process.env.JWT_SECRET,
@@ -136,6 +141,7 @@ exports.login = async (req, res) => {
       const options = {
         expires: new Date(Date.now() + 3 * 24 * 60 * 60 * 1000),
         httpOnly: true,
+        secure: process.env.NODE_ENV === "production",
       };
       res.cookie("token", token, options).status(200).json({
         success: true,
@@ -144,13 +150,14 @@ exports.login = async (req, res) => {
         message: `User Login Success`,
       });
     } else {
+      console.log("Incorrect password for email:", email);
       return res.status(401).json({
         success: false,
         message: `Password is incorrect`,
       });
     }
   } catch (error) {
-    console.error(error);
+    console.error("Login error:", error);
 
     return res.status(500).json({
       success: false,
