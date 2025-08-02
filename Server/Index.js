@@ -22,6 +22,7 @@ database.connect();
 
 app.use(cors({
   origin: "https://studynotionapp21.netlify.app", // ✅ allow Netlify frontend
+//   origin: "http://localhost:3000", // ✅ allow Netlify frontend
   credentials: true, // ✅ allow cookies/auth headers if used
 }));
  
@@ -30,7 +31,7 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
-const allowedOrigins = ["https://studynotionapp21.netlify.app", "http://localhost:3000"];
+// const allowedOrigins = ["https://studynotionapp21.netlify.app", "http://localhost:3000"];
 
 
 
