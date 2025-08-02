@@ -19,12 +19,19 @@ dotenv.config();
 
 
 database.connect();
-
 app.use(cors({
-  origin: "https://studynotionapp21.netlify.app", // ✅ allow Netlify frontend
-//   origin: "http://localhost:3000", // ✅ allow Netlify frontend
-  credentials: true, // ✅ allow cookies/auth headers if used
+  origin: "https://studynotionapp21.netlify.app", // allow only Netlify deployed frontend
+  credentials: true, // allow cookies/auth headers if used
 }));
+
+// Middleware to set CORS headers on all responses including errors
+app.use((req, res, next) => {
+  res.header("Access-Control-Allow-Origin", "https://studynotionapp21.netlify.app");
+  res.header("Access-Control-Allow-Credentials", "true");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
+  res.header("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE, OPTIONS");
+  next();
+});
  
 // const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 
